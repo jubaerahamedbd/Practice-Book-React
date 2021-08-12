@@ -1,4 +1,11 @@
 .App {
-  margin: auto;
   text-align: center;
+  display: block;
+}
+.App button{
+  color: black;
+  font-weight: bold;
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
 }
