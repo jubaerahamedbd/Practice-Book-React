@@ -4,10 +4,15 @@ import bookList from '../assets/books';
 
 
 class MainComponent extends Component {
-    state = {
-        books: bookList,
-        showBooks: true
+    constructor (props){
+        super(props);
+        this.state = {
+            books: bookList,
+            showBooks: true
+        }
+        console.log("MainComponent Constructor");
     }
+  
 
     changeWithInputState = (event, index) => {
         const book = {
@@ -33,7 +38,15 @@ class MainComponent extends Component {
         this.setState({ showBooks: !this.state.showBooks });
     }
 
+    UNSAFE_componentWillMount(){
+        console.log("MainComponenet componentWillMount");
+    }
+    componentDidMount(){
+        console.log("MainComponenet componentDidMount");
+    }
+
     render() {
+        console.log("MainComponent render");
         const style = {
             border: "1px solid red",
             borderRadius: "5px",
