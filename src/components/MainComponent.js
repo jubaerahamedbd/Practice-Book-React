@@ -4,7 +4,7 @@ import bookList from '../assets/books';
 
 
 class MainComponent extends Component {
-    constructor (props){
+    constructor(props) {
         super(props);
         this.state = {
             books: bookList,
@@ -12,7 +12,7 @@ class MainComponent extends Component {
         }
         console.log("MainComponent Constructor");
     }
-  
+
 
     changeWithInputState = (event, index) => {
         const book = {
@@ -38,22 +38,25 @@ class MainComponent extends Component {
         this.setState({ showBooks: !this.state.showBooks });
     }
 
-    UNSAFE_componentWillMount(){
-        console.log("MainComponenet componentWillMount");
-    }
-    componentDidMount(){
+
+    componentDidMount() {
         console.log("MainComponenet componentDidMount");
     }
 
-    shouldComponentUpdate(nextProps,nextState){
-        console.log("U MainComponent shouldComponentUpdate",nextProps,nextState)
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("U MainComponent shouldComponentUpdate", nextProps, nextState)
         return true;
     }
-    UNSAFE_componentWillUpdate(nextProps,nextState){
-        console.log("U MainComponent componentWillUpdate")
-    }
-    componentDidUpdate(){
+    componentDidUpdate() {
         console.log("U MainComponent componenetDidUpdate")
+    }
+    
+    static getDerivedStateFromProps(nextProps,prevState){
+        console.log("MainComponent getDerivedStateFromProps",nextProps,prevState)
+        return prevState;
+    }
+    getSnapshotBeforeUpdate(){
+        console.log("U MainComponent getSnapshotBeforeUpdate")
     }
 
     render() {

@@ -3,34 +3,34 @@ import Book from '../representational/Book';
 
 
 
-class BookList extends Component{
-    constructor(props){
+class BookList extends Component {
+    constructor(props) {
         super(props);
         console.log("BookList Constructor")
     }
-    UNSAFE_componentWillMount(){
-        console.log("BookList componentWillMount");
-    }
-    componentDidMount(){
+
+    componentDidMount() {
         console.log("BookList componentDidMount");
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps){
-        console.log("U BookList componentWillReceiveProps")
-    }
-    shouldComponentUpdate(nextProps,nextState){
+
+    shouldComponentUpdate(nextProps, nextState) {
         console.log("U BookList shouldComponentUpdate")
         return true;
     }
-    UNSAFE_componentWillUpdate(nextProps,nextState){
-        console.log("U BookList componentWillUpdate")
-    }
-    componentDidUpdate(){
+    componentDidUpdate() {
         console.log("U BookList componentDidUpdate")
     }
 
+    static getDerivedStateFromProps(nextProps,prevState){
+        console.log("BookList getDerivedStateFromProps",nextProps,prevState)
+        return prevState;
+    }
+    getSnapshotBeforeUpdate(){
+        console.log("U BookList getSnapshotBeforeUpdate")
+    }
 
-    render(){
+    render() {
         console.log("BookList render");
         return (
             this.props.books.map((book, index) => {
@@ -47,7 +47,7 @@ class BookList extends Component{
         );
 
     }
-    
+
 }
 
 export default BookList;
