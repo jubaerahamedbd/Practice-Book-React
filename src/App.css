@@ -9,3 +9,20 @@
   margin: 10px auto;
   padding: 10px 20px;
 }
+.nav-bar ui{
+  list-style: none;;
+  margin: 00;
+  padding: 0;
+}
+.nav-bar li{
+  display: inline-block;
+  margin: 20px;
+}
+.nav-bar a{
+  text-decoration: none;
+  color: black;
+  font-size: bold;
+}
+.nav-bar a:hover, a:active, a.active {
+  color: orange;
+}
