@@ -48,8 +48,6 @@ class MainComponent extends Component {
                     <Route path="/:bookName" render={() => <BookDetail book={this.state.selectedBook} />} />
                     <Redirect from="/" to="/books"/>
                 </Switch>
-
-
             </div>
         );
     }
